@@ -1,0 +1,613 @@
+/* ==========================================================================
+   APOGEE PARIS - CSS Personnalise
+   Complement a Tailwind CSS - Design Brut & Haut de Gamme
+   ========================================================================== */
+
+/* ==========================================================================
+   1. VARIABLES CSS
+   ========================================================================== */
+
+:root {
+    /* Couleurs principales */
+    --apogee-black: #111111;
+    --apogee-white: #F9F9F7;
+    --apogee-stone: #D4D4CC;
+    --apogee-dark-stone: #A3A398;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-slow: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ==========================================================================
+   2. RESET & BASE OPTIMISE
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--apogee-white);
+    color: var(--apogee-black);
+    letter-spacing: -0.02em;
+    overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+    background-color: var(--apogee-black);
+    color: var(--apogee-white);
+}
+
+/* ==========================================================================
+   3. SCROLLBAR PERSONNALISEE
+   ========================================================================== */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--apogee-white);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--apogee-black);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--apogee-dark-stone);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--apogee-black) var(--apogee-white);
+}
+
+/* ==========================================================================
+   4. COMPOSANTS BRUTALIST
+   ========================================================================== */
+
+.brutal-border {
+    border: 2px solid var(--apogee-black);
+}
+
+.brutal-shadow {
+    box-shadow: 8px 8px 0 var(--apogee-black);
+}
+
+.brutal-shadow:hover {
+    box-shadow: 4px 4px 0 var(--apogee-black);
+    transform: translate(4px, 4px);
+}
+
+/* ==========================================================================
+   5. BOUTONS PREMIUM
+   ========================================================================== */
+
+.btn-premium {
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-medium);
+}
+
+.btn-premium::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.btn-premium:hover::before {
+    left: 100%;
+}
+
+.btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-premium:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   6. MARQUEE ANIMATION
+   ========================================================================== */
+
+.marquee-container {
+    border-top: 2px solid var(--apogee-black);
+    border-bottom: 2px solid var(--apogee-black);
+    background: var(--apogee-black);
+    color: var(--apogee-white);
+    padding: 12px 0;
+    overflow: hidden;
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   7. HERO GRADIENT
+   ========================================================================== */
+
+.hero-gradient {
+    background: linear-gradient(
+        to bottom,
+        rgba(249, 249, 247, 0) 0%,
+        rgba(249, 249, 247, 1) 100%
+    );
+}
+
+/* ==========================================================================
+   8. ANIMATIONS
+   ========================================================================== */
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Scale In */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s ease forwards;
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+/* Pulse Subtle */
+@keyframes pulseSubtle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.animate-pulse-subtle {
+    animation: pulseSubtle 2s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   9. HOVER EFFECTS
+   ========================================================================== */
+
+/* Image Zoom */
+.hover-zoom {
+    overflow: hidden;
+}
+
+.hover-zoom img {
+    transition: transform var(--transition-slow);
+}
+
+.hover-zoom:hover img {
+    transform: scale(1.05);
+}
+
+/* Lift Effect */
+.hover-lift {
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Glow Effect */
+.hover-glow {
+    transition: box-shadow var(--transition-medium);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(17, 17, 17, 0.15);
+}
+
+/* ==========================================================================
+   10. PLANNING CARDS
+   ========================================================================== */
+
+.planning-card {
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.planning-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   11. SERVICE CARDS OVERLAY
+   ========================================================================== */
+
+.service-card {
+    position: relative;
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        transparent 60%
+    );
+    opacity: 0.6;
+    transition: opacity var(--transition-medium);
+}
+
+.service-card:hover::after {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   12. IMAGES OPTIMISEES
+   ========================================================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lazy loading placeholder */
+img[loading="lazy"] {
+    background: linear-gradient(
+        90deg,
+        var(--apogee-stone) 0%,
+        var(--apogee-white) 50%,
+        var(--apogee-stone) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Grayscale avec transition */
+.grayscale-hover {
+    filter: grayscale(100%);
+    transition: filter var(--transition-slow);
+}
+
+.grayscale-hover:hover {
+    filter: grayscale(0%);
+}
+
+/* ==========================================================================
+   13. NAVIGATION
+   ========================================================================== */
+
+/* Nav Links underline effect */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width var(--transition-medium);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Active state */
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   14. MOBILE CTA FLOATING
+   ========================================================================== */
+
+.mobile-cta-float {
+    animation: floatUp 0.6s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ==========================================================================
+   15. SECTION TRANSITIONS
+   ========================================================================== */
+
+section {
+    opacity: 1;
+}
+
+/* Intersection Observer Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   16. FORMULAIRE MAP
+   ========================================================================== */
+
+/* Map grayscale */
+iframe[src*="google.com/maps"] {
+    filter: grayscale(1) contrast(1.1) brightness(1);
+    transition: filter var(--transition-slow);
+}
+
+iframe[src*="google.com/maps"]:hover {
+    filter: grayscale(0.5) contrast(1.05) brightness(1);
+}
+
+/* ==========================================================================
+   17. FOCUS STATES (Accessibilite)
+   ========================================================================== */
+
+:focus-visible {
+    outline: 2px solid var(--apogee-black);
+    outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--apogee-black);
+    outline-offset: 4px;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: var(--apogee-black);
+    color: var(--apogee-white);
+    padding: 1rem;
+    z-index: 9999;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ==========================================================================
+   18. PRINT STYLES
+   ========================================================================== */
+
+@media print {
+    .marquee-container,
+    .mobile-cta-float,
+    nav,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
+
+/* ==========================================================================
+   19. REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .marquee-content {
+        animation: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ==========================================================================
+   20. RESPONSIVE UTILITIES
+   ========================================================================== */
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+
+/* Text balance for headings */
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
+/* ==========================================================================
+   21. PERFORMANCE OPTIMIZATIONS
+   ========================================================================== */
+
+/* GPU acceleration pour animations */
+.btn-premium,
+.hover-lift,
+.planning-card,
+.marquee-content {
+    will-change: transform;
+}
+
+/* Contient les repaints */
+.marquee-container {
+    contain: layout style paint;
+}
+
+/* ==========================================================================
+   22. LOADING STATES
+   ========================================================================== */
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--apogee-stone) 25%,
+        var(--apogee-white) 50%,
+        var(--apogee-stone) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   23. CUSTOM RESPONSIVE BREAKPOINTS FIXES
+   ========================================================================== */
+
+/* Fix planning overflow on tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .planning-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Fix touch targets on mobile */
+@media (max-width: 767px) {
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}

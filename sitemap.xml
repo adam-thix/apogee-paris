@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Page principale -->
+    <url>
+        <loc>https://adam-thix.github.io/apog-e-paris/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://adam-thix.github.io/apog-e-paris/images/studio.webp</image:loc>
+            <image:title>Studio Apogee Paris - Performance et Recuperation</image:title>
+            <image:caption>Vue interieure du studio de performance Apogee Paris</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://adam-thix.github.io/apog-e-paris/images/storefront.webp</image:loc>
+            <image:title>Entree du studio Apogee Paris</image:title>
+            <image:caption>Facade du studio de coaching Apogee Paris dans le 20eme arrondissement</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://adam-thix.github.io/apog-e-paris/images/team.webp</image:loc>
+            <image:title>Equipe Apogee Paris</image:title>
+            <image:caption>L equipe de coachs et therapeutes du studio Apogee Paris</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://adam-thix.github.io/apog-e-paris/images/coaching-new.jpg</image:loc>
+            <image:title>Coaching prive Paris</image:title>
+            <image:caption>Seance de coaching sportif personnalise chez Apogee Paris</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://adam-thix.github.io/apog-e-paris/images/massage-new.jpg</image:loc>
+            <image:title>Massage sportif Paris</image:title>
+            <image:caption>Massage sportif professionnel pour la recuperation</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://adam-thix.github.io/apog-e-paris/images/osteo-new.jpg</image:loc>
+            <image:title>Osteopathie Paris</image:title>
+            <image:caption>Consultation osteopathique chez Apogee Paris</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://adam-thix.github.io/apog-e-paris/images/nutrition-new.jpg</image:loc>
+            <image:title>Nutrition sportive Paris</image:title>
+            <image:caption>Accompagnement nutritionnel pour sportifs</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Sections de la page (ancres pour SEO local) -->
+    <url>
+        <loc>https://adam-thix.github.io/apog-e-paris/#studio</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://adam-thix.github.io/apog-e-paris/#services</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://adam-thix.github.io/apog-e-paris/#planning</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://adam-thix.github.io/apog-e-paris/#equipe</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://adam-thix.github.io/apog-e-paris/#contact</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>

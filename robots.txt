@@ -1,0 +1,122 @@
+# ==========================================================================
+# APOGEE PARIS - robots.txt
+# https://adam-thix.github.io/apog-e-paris/robots.txt
+# ==========================================================================
+
+# Autoriser tous les robots
+User-agent: *
+Allow: /
+
+# Fichiers a ne pas indexer
+Disallow: /css/
+Disallow: /*.json$
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /backup/
+
+# Sitemap XML
+Sitemap: https://adam-thix.github.io/apog-e-paris/sitemap.xml
+
+# ==========================================================================
+# Regles specifiques pour Google
+# ==========================================================================
+
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+Disallow: /css/
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /images/
+Disallow: /css/
+
+# ==========================================================================
+# Regles specifiques pour Bing
+# ==========================================================================
+
+User-agent: Bingbot
+Allow: /
+Allow: /images/
+Crawl-delay: 1
+
+# ==========================================================================
+# Regles specifiques pour les autres moteurs
+# ==========================================================================
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# ==========================================================================
+# Bloquer les robots malveillants connus
+# ==========================================================================
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SearchmetricsBot
+Disallow: /
+
+# ==========================================================================
+# Bloquer les scrapers agressifs
+# ==========================================================================
+
+User-agent: MegaIndex.ru
+Disallow: /
+
+User-agent: ltx71
+Disallow: /
+
+User-agent: BUbiNG
+Disallow: /
+
+# ==========================================================================
+# Autoriser les reseaux sociaux
+# ==========================================================================
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+# ==========================================================================
+# Host principal (optionnel)
+# ==========================================================================
+
+Host: https://adam-thix.github.io/apog-e-paris

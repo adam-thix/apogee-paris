@@ -1,0 +1,38 @@
+{
+    "name": "Apogee Paris - Studio de Performance",
+    "short_name": "Apogee Paris",
+    "description": "Studio de coaching prive, bootcamp, pilates, massage sportif et osteopathie au coeur du 20eme arrondissement de Paris.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#F9F9F7",
+    "theme_color": "#111111",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "fr-FR",
+    "categories": ["fitness", "health", "sports"],
+    "icons": [
+        {
+            "src": "images/logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "images/studio.webp",
+            "sizes": "1280x720",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Studio Apogee Paris"
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false
+}

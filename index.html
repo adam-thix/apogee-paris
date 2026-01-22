@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Primary Meta Tags -->
+    <title>APOGÉE PARIS | Studio de Performance & Récupération Paris 20</title>
+    <meta name="title" content="APOGÉE PARIS | Studio de Performance & Récupération Paris 20">
+    <meta name="description" content="Studio de coaching privé, bootcamp, pilates, massage sportif et ostéopathie au cœur du 20ème arrondissement de Paris. L'excellence de la performance sans compromis.">
+    <meta name="keywords" content="coaching sportif Paris, bootcamp Paris 20, pilates Paris, massage sportif, ostéopathie Paris, salle de sport premium, studio fitness haut de gamme, coach personnel Paris">
+    <meta name="author" content="Apogée Paris">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://adam-thix.github.io/apog-e-paris/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adam-thix.github.io/apog-e-paris/">
+    <meta property="og:title" content="APOGÉE PARIS | Studio de Performance & Récupération">
+    <meta property="og:description" content="Studio de coaching privé, bootcamp, pilates, massage sportif et ostéopathie au cœur du 20ème arrondissement de Paris.">
+    <meta property="og:image" content="https://adam-thix.github.io/apog-e-paris/images/studio.webp">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Apogée Paris">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://adam-thix.github.io/apog-e-paris/">
+    <meta name="twitter:title" content="APOGÉE PARIS | Studio de Performance & Récupération">
+    <meta name="twitter:description" content="Studio de coaching privé, bootcamp, pilates, massage sportif et ostéopathie au cœur du 20ème arrondissement de Paris.">
+    <meta name="twitter:image" content="https://adam-thix.github.io/apog-e-paris/images/studio.webp">
+
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#111111">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="FR-75">
+    <meta name="geo.placename" content="Paris">
+    <meta name="geo.position" content="48.867513;2.385759">
+    <meta name="ICBM" content="48.867513, 2.385759">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsActivityLocation",
+        "name": "Apogée Paris",
+        "description": "Studio de performance et de récupération au cœur du 20ème arrondissement de Paris. Coaching privé, bootcamp, pilates, massage sportif et ostéopathie.",
+        "url": "https://adam-thix.github.io/apog-e-paris",
+        "telephone": "+33140300010",
+        "email": "contact@apogee-paris.fr",
+        "image": "https://adam-thix.github.io/apog-e-paris/images/studio.webp",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "24 Rue des Maronites",
+            "addressLocality": "Paris",
+            "postalCode": "75020",
+            "addressCountry": "FR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 48.867513,
+            "longitude": 2.385759
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "07:00",
+            "closes": "22:00"
+        },
+        "sameAs": [
+            "https://www.instagram.com/apogeeparis_/"
+        ],
+        "priceRange": "€€€"
+    }
+    </script>
+
+    <!-- Google Fonts: Inter pour le luxe moderne, Permanent Marker pour la touche brute -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apogee-black': '#111111',
+                        'apogee-white': '#F9F9F7', // Teinte pierre/papier haut de gamme
+                        'apogee-stone': '#D4D4CC', // Accent élégant et neutre
+                        'apogee-dark-stone': '#A3A398',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        marker: ['"Permanent Marker"', 'cursive'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F9F9F7;
+            color: #111111;
+            letter-spacing: -0.02em;
+        }
+
+        /* Brutalist Classy Shadow */
+        .brutal-border {
+            border: 2px solid #111111;
+        }
+        
+        .btn-premium {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #F9F9F7; }
+        ::-webkit-scrollbar-thumb { background: #111111; }
+
+        .marquee-container {
+            border-top: 2px solid #111111;
+            border-bottom: 2px solid #111111;
+            background: #111111;
+            color: #F9F9F7;
+            padding: 12px 0;
+            overflow: hidden;
+        }
+        
+        .marquee-content {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(249, 249, 247, 0) 0%, rgba(249, 249, 247, 1) 100%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- HEADER SOBRE & CLASSY -->
+    <nav class="sticky top-0 z-50 bg-apogee-black px-6 py-4 flex justify-between items-center transition-all">
+        <div class="flex items-center gap-6">
+            <a href="#" class="transition-opacity hover:opacity-70">
+                <img src="images/logo.png" alt="APOGÉE PARIS" class="h-12 md:h-14 object-contain brightness-0 invert">
+            </a>
+        </div>
+
+        <div class="hidden lg:flex gap-10 font-medium uppercase text-[11px] tracking-[0.2em] text-apogee-white">
+            <a href="#studio" class="hover:text-apogee-stone transition-colors">Le Studio</a>
+            <a href="#services" class="hover:text-apogee-stone transition-colors">Disciplines</a>
+            <a href="#planning" class="hover:text-apogee-stone transition-colors">Planning</a>
+            <a href="#equipe" class="hover:text-apogee-stone transition-colors">L'Équipe</a>
+            <a href="#contact" class="hover:text-apogee-stone transition-colors">Contact</a>
+        </div>
+
+        <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="bg-apogee-white text-apogee-black px-8 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] btn-premium hover:bg-apogee-stone">
+            Réserver
+        </a>
+    </nav>
+
+    <!-- HERO SECTION REVISITÉE -->
+    <header class="relative min-h-[90svh] md:min-h-[85vh] flex flex-col justify-center items-center text-center px-5 py-16 md:p-6 overflow-hidden">
+        <!-- Vidéo de fond -->
+        <div class="absolute inset-0 z-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="images/hero-video.mp4" type="video/mp4">
+                <img src="images/studio.webp" alt="Studio Apogée" class="w-full h-full object-cover">
+            </video>
+            <!-- Overlay blanc pour lisibilité du texte -->
+            <div class="absolute inset-0 bg-apogee-white/60"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl">
+            <!-- Badge Google Reviews -->
+            <div class="mb-6 md:mb-8">
+                <div class="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                    <div class="flex text-yellow-500">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <span class="text-xs font-bold text-apogee-black">5.0 · 76 avis Google</span>
+                </div>
+            </div>
+
+            <!-- Titre principal -->
+            <h1 class="text-[2.5rem] leading-[0.9] sm:text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter mb-4 md:mb-6 text-apogee-black">
+                L'APOGÉE DE LA <span class="text-white">PERFORMANCE.</span>
+            </h1>
+
+            <!-- Sous-titre -->
+            <p class="text-sm md:text-base text-apogee-black/70 mb-6 md:mb-10 max-w-xl mx-auto">
+                Studio de coaching & récupération · Paris 20<sup>e</sup>
+            </p>
+
+            <!-- CTA -->
+            <div class="flex justify-center">
+                <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="bg-apogee-black text-apogee-white px-10 py-4 md:px-14 md:py-6 text-sm md:text-lg font-bold uppercase tracking-widest btn-premium">
+                    Réserver
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MARQUEE TECHNIQUE -->
+    <div class="marquee-container">
+        <div class="marquee-content font-bold uppercase text-xs tracking-[0.3em]">
+            <span class="mx-8">Coaching Privé</span> • <span class="mx-8">Bootcamp Performance</span> • <span class="mx-8">Pilates Core</span> • <span class="mx-8">Massage Sportif</span> • <span class="mx-8">Ostéopathie</span> • <span class="mx-8">Nutrition</span> • <span class="mx-8">Coaching Privé</span> • <span class="mx-8">Bootcamp Performance</span> • <span class="mx-8">Pilates Core</span> • <span class="mx-8">Massage Sportif</span> • <span class="mx-8">Ostéopathie</span> • <span class="mx-8">Nutrition</span>
+        </div>
+    </div>
+
+    <!-- STUDIO SECTION -->
+    <section id="studio" class="py-24 px-6 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="order-2 lg:order-1">
+            <div class="relative">
+                <img src="images/storefront.webp" alt="Entrée du studio Apogée Paris - 24 Rue des Maronites Paris 20" class="w-full aspect-square object-cover grayscale brutal-border" loading="lazy">
+                <div class="absolute -bottom-10 -right-10 hidden md:block">
+                    <img src="images/logo.png" alt="Badge Apogée Paris" class="w-32 h-32 object-contain bg-apogee-black p-4 border-2 border-black rotate-12 brightness-0 invert">
+                </div>
+            </div>
+        </div>
+        <div class="order-1 lg:order-2">
+            <h2 class="text-4xl md:text-6xl font-black uppercase mb-8 leading-tight">Brut.<br>Haut de gamme.<br>Efficace.</h2>
+            <p class="text-xl text-gray-600 mb-10 leading-relaxed font-light">
+                Apogée Paris n'est pas qu'une salle de sport. C'est un studio de design dédié au mouvement. Nous avons supprimé tout le superflu pour ne garder que l'essentiel : le matériel le plus précis, les meilleurs experts et une ambiance qui favorise la concentration absolue.
+            </p>
+            <div class="flex gap-4">
+                <div class="w-12 h-[1px] bg-apogee-black mt-3"></div>
+                <p class="font-marker text-2xl">24 Rue des Maronites</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCIPLINES GRID -->
+    <section id="services" class="py-24 px-6 md:px-20 bg-white">
+        <div class="mb-20">
+            <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter">Nos Disciplines</h2>
+            <div class="h-1.5 w-32 bg-apogee-black mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+            <!-- SERVICE 1 -->
+            <div class="group relative aspect-[3/4] overflow-hidden bg-black">
+                <img src="images/coaching-new.jpg" alt="Coaching sportif privé et bootcamp à Paris 20" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                    <h3 class="text-2xl font-black uppercase mb-4">Performance</h3>
+                    <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-6 font-light">Coaching privé, Bootcamp et Pilates pour forger un corps résistant.</p>
+                    <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="border border-white/30 py-3 text-center uppercase text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition-all">Réserver</a>
+                </div>
+            </div>
+
+            <!-- SERVICE 2 -->
+            <div class="group relative aspect-[3/4] overflow-hidden bg-black">
+                <img src="images/massage-new.jpg" alt="Massage sportif et récupération musculaire à Paris" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                    <h3 class="text-2xl font-black uppercase mb-4">Récupération</h3>
+                    <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-6 font-light">Massage sportif profond pour optimiser la régénération musculaire.</p>
+                    <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="border border-white/30 py-3 text-center uppercase text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition-all">Prendre RDV</a>
+                </div>
+            </div>
+
+            <!-- SERVICE 3 -->
+            <div class="group relative aspect-[3/4] overflow-hidden bg-black">
+                <img src="images/osteo-new.jpg" alt="Ostéopathie et prévention des blessures à Paris 20" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                    <h3 class="text-2xl font-black uppercase mb-4">Ostéopathie</h3>
+                    <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-6 font-light">Expertise clinique pour prévenir les blessures et traiter les douleurs.</p>
+                    <a href="https://www.doctolib.fr/osteopathe/paris/ayoub-niati" target="_blank" class="border border-white/30 py-3 text-center uppercase text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition-all">Doctolib</a>
+                </div>
+            </div>
+
+            <!-- SERVICE 4 -->
+            <div class="group relative aspect-[3/4] overflow-hidden bg-black">
+                <img src="images/nutrition-new.jpg" alt="Nutrition sportive et accompagnement diététique Paris" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                    <h3 class="text-2xl font-black uppercase mb-4">Nutrition</h3>
+                    <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-6 font-light">Accompagnement diététique pour soutenir vos objectifs physiques.</p>
+                    <a href="https://linktr.ee/amelienutritionniste" target="_blank" class="border border-white/30 py-3 text-center uppercase text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition-all">Détails</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANNING ÉPURÉ -->
+    <section id="planning" class="py-16 md:py-24 px-4 md:px-20 border-t border-black/5">
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase mb-10 md:mb-16 text-center">Planning Hebdomadaire</h2>
+
+        <div class="max-w-6xl mx-auto">
+            <!-- Grille responsive: 1 col mobile, 2 cols tablette, 5 cols desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
+                <!-- Mardi -->
+                <div class="bg-white p-6 md:p-8 border border-black/10 transition-shadow hover:shadow-xl">
+                    <span class="block text-[10px] tracking-[0.3em] font-bold text-apogee-dark-stone mb-4 md:mb-6 uppercase">Mardi</span>
+                    <div class="border-t border-black/5 pt-4">
+                        <span class="text-xl md:text-2xl font-black">19H00</span>
+                        <span class="block text-xs font-bold uppercase mt-1">Bootcamp</span>
+                    </div>
+                </div>
+
+                <!-- Mercredi - Le plus chargé -->
+                <div class="bg-apogee-white p-6 md:p-8 border-2 border-apogee-black transition-shadow hover:shadow-xl sm:col-span-2 lg:col-span-1">
+                    <span class="block text-[10px] tracking-[0.3em] font-bold text-apogee-black mb-4 md:mb-6 uppercase italic">Mercredi</span>
+                    <div class="grid grid-cols-3 lg:grid-cols-1 gap-4 lg:space-y-6 lg:gap-0">
+                        <div class="border-t border-black/10 pt-3 lg:pt-4">
+                            <span class="text-lg md:text-2xl font-black">08H30</span>
+                            <span class="block text-[10px] md:text-xs font-bold uppercase mt-1">Pilates</span>
+                        </div>
+                        <div class="border-t border-black/10 pt-3 lg:pt-4">
+                            <span class="text-lg md:text-2xl font-black">18H00</span>
+                            <span class="block text-[10px] md:text-xs font-bold uppercase mt-1">Pilates</span>
+                        </div>
+                        <div class="border-t border-black/10 pt-3 lg:pt-4">
+                            <span class="text-lg md:text-2xl font-black">19H00</span>
+                            <span class="block text-[10px] md:text-xs font-bold uppercase mt-1">Pilates</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jeudi -->
+                <div class="bg-white p-6 md:p-8 border border-black/10 transition-shadow hover:shadow-xl">
+                    <span class="block text-[10px] tracking-[0.3em] font-bold text-apogee-dark-stone mb-4 md:mb-6 uppercase">Jeudi</span>
+                    <div class="border-t border-black/5 pt-4">
+                        <span class="text-xl md:text-2xl font-black">19H00</span>
+                        <span class="block text-xs font-bold uppercase mt-1">Bootcamp</span>
+                    </div>
+                </div>
+
+                <!-- Vendredi -->
+                <div class="bg-white p-6 md:p-8 border border-black/10 transition-shadow hover:shadow-xl">
+                    <span class="block text-[10px] tracking-[0.3em] font-bold text-apogee-dark-stone mb-4 md:mb-6 uppercase">Vendredi</span>
+                    <div class="border-t border-black/5 pt-4">
+                        <span class="text-xl md:text-2xl font-black">18H00</span>
+                        <span class="block text-xs font-bold uppercase mt-1">Pilates</span>
+                    </div>
+                </div>
+
+                <!-- Dimanche - En vedette -->
+                <div class="bg-apogee-black text-white p-6 md:p-8 transition-shadow hover:shadow-xl sm:col-span-2 lg:col-span-1">
+                    <span class="block text-[10px] tracking-[0.3em] font-bold text-apogee-stone mb-4 md:mb-6 uppercase">Dimanche</span>
+                    <div class="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:space-y-6 lg:gap-0">
+                        <div class="border-t border-white/10 pt-3 lg:pt-4">
+                            <span class="text-lg md:text-2xl font-black">10H00</span>
+                            <span class="block text-[10px] md:text-xs font-bold uppercase mt-1 text-apogee-stone">Pilates</span>
+                        </div>
+                        <div class="border-t border-white/10 pt-3 lg:pt-4">
+                            <span class="text-lg md:text-2xl font-black">11H00</span>
+                            <span class="block text-[10px] md:text-xs font-bold uppercase mt-1 text-apogee-stone">Bootcamp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÉQUIPE -->
+    <section id="equipe" class="py-24 px-6 md:px-20 bg-apogee-black text-apogee-white">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-5xl md:text-7xl font-black uppercase mb-10 leading-none tracking-tighter">L'Élite du Studio.</h2>
+                <p class="text-xl font-light text-gray-400 mb-12 leading-relaxed">
+                    Notre équipe est composée d'experts certifiés travaillant en synergie pour votre santé physique. Ici, l'accompagnement est total.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-6 group cursor-default">
+                        <span class="text-4xl font-marker text-apogee-stone transition-transform group-hover:scale-110 block">01</span>
+                        <span class="text-2xl font-bold uppercase tracking-widest">Coaching Scientifique</span>
+                    </div>
+                    <div class="flex items-center gap-6 group cursor-default">
+                        <span class="text-4xl font-marker text-apogee-stone transition-transform group-hover:scale-110 block">02</span>
+                        <span class="text-2xl font-bold uppercase tracking-widest">Récupération Médicale</span>
+                    </div>
+                    <div class="flex items-center gap-6 group cursor-default">
+                        <span class="text-4xl font-marker text-apogee-stone transition-transform group-hover:scale-110 block">03</span>
+                        <span class="text-2xl font-bold uppercase tracking-widest">Nutrition Optimisée</span>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2">
+                <img src="images/team.webp" alt="Équipe de coachs et thérapeutes Apogée Paris" class="w-full grayscale border border-white/10 shadow-2xl" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP SANS FORMULAIRE -->
+    <section id="contact" class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="p-10 md:p-24 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-black/10">
+            <span class="font-marker text-2xl text-apogee-dark-stone mb-4">Rejoins le sommet.</span>
+            <h2 class="font-black uppercase mb-16 leading-none tracking-tighter" style="font-size: 3.9rem;">Nous<br>Trouver.</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-2">Localisation</h3>
+                        <p class="text-2xl font-bold uppercase">24 Rue des Maronites<br>75020 Paris</p>
+                    </div>
+                    <div>
+                        <h3 class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-2">Suivre</h3>
+                        <a href="https://www.instagram.com/apogeeparis_/" target="_blank" class="text-2xl font-bold uppercase hover:text-apogee-dark-stone transition-colors underline decoration-1 underline-offset-8">@apogeeparis_</a>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-2">Horaires</h3>
+                        <p class="text-lg font-medium">Lundi — Dimanche<br>07:00 — 22:00</p>
+                    </div>
+                    <div>
+                        <h3 class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-2">Direct</h3>
+                        <p class="text-lg font-medium">01 40 30 00 10</p>
+                        <a href="mailto:contact@apogee-paris.fr" class="text-sm font-bold opacity-60 hover:opacity-100 transition-opacity underline">contact@apogee-paris.fr</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20">
+                <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="block w-full text-center bg-apogee-black text-white py-6 text-xl font-black uppercase tracking-widest btn-premium">
+                    Réserver une session
+                </a>
+            </div>
+        </div>
+        
+        <div class="h-[600px] lg:h-auto bg-gray-100">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.5!2d2.3857!3d48.8675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66df5cf951b8b%3A0x3fabd1f1f0a13d45!2s24%20Rue%20des%20Maronites%2C%2075020%20Paris%2C%20France!5e0!3m2!1sfr!2sfr!4v1706000000000!5m2!1sfr!2sfr"
+                width="100%"
+                height="100%"
+                style="border:0; filter: grayscale(1) contrast(1.1);"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER MINIMALISTE -->
+    <footer class="bg-white border-t border-black/5 p-12 flex flex-col md:flex-row justify-between items-center gap-10">
+        <div class="flex items-center gap-6">
+            <img src="images/logo.png" alt="Apogée" class="h-8 brightness-0 invert opacity-80">
+            <div class="h-8 w-[1px] bg-black/10 hidden md:block"></div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">Performance Studio</span>
+        </div>
+        
+        <div class="flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">
+            <a href="#" class="hover:opacity-100 transition-opacity">Mentions</a>
+            <a href="#" class="hover:opacity-100 transition-opacity">Confidentialité</a>
+            <a href="#" class="hover:opacity-100 transition-opacity">© 2026</a>
+        </div>
+    </footer>
+
+    <!-- MOBILE CTA FLOATING -->
+    <div class="lg:hidden fixed bottom-8 left-1/2 -translate-x-1/2 w-[85%] z-50">
+        <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="block w-full text-center bg-apogee-black text-white py-5 font-black text-sm uppercase tracking-widest shadow-2xl border border-white/10">
+            Réserver
+        </a>
+    </div>
+
+</body>
+</html>

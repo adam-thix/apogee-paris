@@ -1,0 +1,279 @@
+# ==========================================================================
+# APOGEE PARIS - Configuration Apache (.htaccess)
+# Performance, Securite & SEO
+# ==========================================================================
+
+# ==========================================================================
+# 1. REWRITE ENGINE
+# ==========================================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirect www to non-www (ou inverse selon preference)
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+    # Remove trailing slash
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [R=301,L]
+
+    # Clean URLs - Remove .html extension
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.+)$ $1.html [L]
+</IfModule>
+
+# ==========================================================================
+# 2. COMPRESSION GZIP
+# ==========================================================================
+
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/ld+json
+    AddOutputFilterByType DEFLATE application/manifest+json
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+
+    # Remove browser bugs
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# ==========================================================================
+# 3. CACHE CONTROL (Expires Headers)
+# ==========================================================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # Data
+    ExpiresByType text/xml "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/ld+json "access plus 0 seconds"
+
+    # Feeds
+    ExpiresByType application/rss+xml "access plus 1 hour"
+    ExpiresByType application/atom+xml "access plus 1 hour"
+
+    # Favicon
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+
+    # Media: images
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+
+    # Media: video
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+
+    # Audio
+    ExpiresByType audio/ogg "access plus 1 year"
+    ExpiresByType audio/mpeg "access plus 1 year"
+
+    # CSS & JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+</IfModule>
+
+# ==========================================================================
+# 4. CACHE-CONTROL HEADERS
+# ==========================================================================
+
+<IfModule mod_headers.c>
+    # HTML - No cache
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+
+    # CSS, JavaScript - 1 year cache
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Images - 1 year cache
+    <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|avif|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Fonts - 1 year cache
+    <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+# ==========================================================================
+# 5. SECURITY HEADERS
+# ==========================================================================
+
+<IfModule mod_headers.c>
+    # Prevent MIME-sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # XSS Protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Clickjacking protection
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions Policy
+    Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(self), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+    # Content Security Policy (ajuster selon les besoins)
+    # Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.google.com https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com https://maps.google.com;"
+</IfModule>
+
+# ==========================================================================
+# 6. MIME TYPES
+# ==========================================================================
+
+<IfModule mod_mime.c>
+    # JavaScript
+    AddType application/javascript js mjs
+
+    # JSON
+    AddType application/json json
+    AddType application/ld+json jsonld
+
+    # Web fonts
+    AddType font/woff woff
+    AddType font/woff2 woff2
+    AddType application/vnd.ms-fontobject eot
+    AddType font/ttf ttf
+    AddType font/otf otf
+
+    # Images
+    AddType image/webp webp
+    AddType image/avif avif
+    AddType image/svg+xml svg svgz
+
+    # Video
+    AddType video/mp4 mp4
+    AddType video/webm webm
+
+    # Manifest
+    AddType application/manifest+json webmanifest
+</IfModule>
+
+# ==========================================================================
+# 7. CHARACTER ENCODING
+# ==========================================================================
+
+AddDefaultCharset UTF-8
+
+<IfModule mod_mime.c>
+    AddCharset UTF-8 .css .js .json .xml .html .txt
+</IfModule>
+
+# ==========================================================================
+# 8. ERROR DOCUMENTS
+# ==========================================================================
+
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
+
+# ==========================================================================
+# 9. DIRECTORY PROTECTION
+# ==========================================================================
+
+# Disable directory browsing
+Options -Indexes
+
+# Block access to hidden files and directories
+<IfModule mod_rewrite.c>
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# Block access to sensitive files
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+
+# ==========================================================================
+# 10. PERFORMANCE - ETags
+# ==========================================================================
+
+# Remove ETags (use Cache-Control instead)
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# ==========================================================================
+# 11. KEEP-ALIVE
+# ==========================================================================
+
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# ==========================================================================
+# 12. PRELOAD RESOURCES (Optional - via Link headers)
+# ==========================================================================
+
+<IfModule mod_headers.c>
+    # Preconnect to Google Fonts
+    Header add Link "</css/style.css>; rel=preload; as=style"
+    Header add Link "<https://fonts.googleapis.com>; rel=preconnect"
+    Header add Link "<https://fonts.gstatic.com>; rel=preconnect; crossorigin"
+</IfModule>

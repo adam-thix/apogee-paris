@@ -1,0 +1,17 @@
+# System files
+.DS_Store
+Thumbs.db
+*.stackdump
+
+# IDE
+.vscode/
+.idea/
+.claude/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp
+*.tmp
+*.temp
