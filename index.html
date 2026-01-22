@@ -178,7 +178,7 @@
         <div class="hidden lg:flex gap-10 font-medium uppercase text-[11px] tracking-[0.2em] text-apogee-white">
             <a href="#studio" class="hover:text-apogee-stone transition-colors">Le Studio</a>
             <a href="#services" class="hover:text-apogee-stone transition-colors">Disciplines</a>
-            <a href="#" onclick="openPlanningModal(); return false;" class="hover:text-apogee-stone transition-colors">Planning</a>
+            <a href="#planning" class="hover:text-apogee-stone transition-colors">Planning</a>
             <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="hover:text-apogee-stone transition-colors">Tarifs</a>
             <a href="#equipe" class="hover:text-apogee-stone transition-colors">L'Équipe</a>
             <a href="#contact" class="hover:text-apogee-stone transition-colors">Contact</a>
@@ -201,7 +201,7 @@
         <div class="flex flex-col items-center justify-center h-full gap-8 text-apogee-white">
             <a href="#studio" onclick="closeMobileMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Le Studio</a>
             <a href="#services" onclick="closeMobileMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Disciplines</a>
-            <a href="#" onclick="openPlanningModal(); closeMobileMenu(); return false;" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Planning</a>
+            <a href="#planning" onclick="closeMobileMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Planning</a>
             <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Tarifs</a>
             <a href="#equipe" onclick="closeMobileMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">L'Équipe</a>
             <a href="#contact" onclick="closeMobileMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Contact</a>
@@ -266,7 +266,7 @@
     <section id="studio" class="py-24 px-6 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div class="order-2 lg:order-1">
             <div class="relative">
-                <img src="images/storefront.webp" alt="Entrée du studio Apogée Paris - 24 Rue des Maronites Paris 20" class="w-full aspect-square object-cover grayscale brutal-border" loading="lazy">
+                <img src="images/storefront.webp" alt="Entrée du studio Apogée Paris - 24 Rue des Maronites Paris 20" class="w-full aspect-square object-cover object-right grayscale brutal-border" loading="lazy">
                 <div class="absolute -bottom-10 -right-10 hidden md:block">
                     <img src="images/logo.png" alt="Badge Apogée Paris" class="w-32 h-32 object-contain bg-apogee-black p-4 border-2 border-black rotate-12 brightness-0 invert">
                 </div>
@@ -275,7 +275,7 @@
         <div class="order-1 lg:order-2">
             <h2 class="text-4xl md:text-6xl font-black uppercase mb-8 leading-tight">Convivial.<br>Haut de gamme.<br>Efficace.</h2>
             <p class="text-xl text-gray-600 mb-10 leading-relaxed font-light">
-                Apogée Paris n'est pas qu'une salle de sport. C'est un studio de design dédié au mouvement. Nous avons supprimé tout le superflu pour ne garder que l'essentiel : le matériel le plus précis, les meilleurs experts et une ambiance qui favorise la concentration absolue.
+                Apogée Paris n'est pas qu'une salle de sport. C'est un studio de coaching convivial et intimiste dédié au mouvement. Nous avons supprimé tout le superflu pour ne garder que l'essentiel : le matériel le plus précis, les meilleurs experts et une ambiance qui favorise la concentration absolue.
             </p>
             <div class="flex gap-4">
                 <div class="w-12 h-[1px] bg-apogee-black mt-3"></div>
@@ -306,7 +306,7 @@
             <div class="group relative aspect-[3/4] overflow-hidden bg-black">
                 <img src="images/massage-new.jpg" alt="Massage sportif et récupération musculaire à Paris" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" loading="lazy">
                 <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                    <h3 class="text-2xl font-black uppercase mb-4">Récupération</h3>
+                    <h3 class="text-2xl font-black uppercase mb-4">Massage</h3>
                     <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-6 font-light">Massage sportif profond pour optimiser la régénération musculaire.</p>
                     <button onclick="openMassageModal()" class="border border-white/30 py-3 text-center uppercase text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition-all cursor-pointer">Prendre RDV</button>
                 </div>
@@ -409,7 +409,7 @@
     <section id="equipe" class="py-24 px-6 md:px-20 bg-apogee-black text-apogee-white">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
             <div class="w-full lg:w-1/2">
-                <h2 class="text-5xl md:text-7xl font-black uppercase mb-10 leading-none tracking-tighter">L'Élite du Studio.</h2>
+                <h2 class="text-5xl md:text-7xl font-black uppercase mb-10 leading-none tracking-tighter">L'Élite du Coaching.</h2>
                 <p class="text-xl font-light text-gray-400 mb-12 leading-relaxed">
                     Notre équipe est composée d'experts certifiés travaillant en synergie pour votre santé physique et mentale. Ici, l'accompagnement est total.
                 </p>
@@ -430,7 +430,7 @@
             </div>
             <div class="w-full lg:w-1/2">
                 <p class="text-center text-apogee-stone font-marker text-2xl mb-6">Notre équipe</p>
-                <img src="images/team.webp" alt="Équipe de coachs et thérapeutes Apogée Paris" class="w-full grayscale border border-white/10 shadow-2xl" loading="lazy">
+                <img src="images/team.webp" alt="Équipe de coachs et thérapeutes Apogée Paris" class="w-full grayscale border border-white/10 shadow-2xl object-cover object-bottom" style="max-height: 500px;" loading="lazy">
             </div>
         </div>
     </section>
@@ -438,7 +438,7 @@
     <!-- CONTACT & MAP SANS FORMULAIRE -->
     <section id="contact" class="grid grid-cols-1 lg:grid-cols-2">
         <div class="p-10 md:p-24 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-black/10">
-            <span class="font-marker text-2xl text-apogee-dark-stone mb-4">Rejoins le sommet.</span>
+            <span class="font-marker text-2xl text-apogee-dark-stone mb-4">Atteins ton apogée.</span>
             <h2 class="font-black uppercase mb-16 leading-none tracking-tighter" style="font-size: 3.9rem;">Nous<br>Trouver.</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
