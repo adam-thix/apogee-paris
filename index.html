@@ -178,15 +178,36 @@
         <div class="hidden lg:flex gap-10 font-medium uppercase text-[11px] tracking-[0.2em] text-apogee-white">
             <a href="#studio" class="hover:text-apogee-stone transition-colors">Le Studio</a>
             <a href="#services" class="hover:text-apogee-stone transition-colors">Disciplines</a>
-            <a href="#planning" class="hover:text-apogee-stone transition-colors">Planning</a>
+            <a href="#" onclick="openPlanningModal(); return false;" class="hover:text-apogee-stone transition-colors">Planning</a>
+            <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="hover:text-apogee-stone transition-colors">Tarifs</a>
             <a href="#equipe" class="hover:text-apogee-stone transition-colors">L'Équipe</a>
             <a href="#contact" class="hover:text-apogee-stone transition-colors">Contact</a>
         </div>
 
-        <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="bg-apogee-white text-apogee-black px-8 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] btn-premium hover:bg-apogee-stone">
+        <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="hidden lg:block bg-apogee-white text-apogee-black px-8 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] btn-premium hover:bg-apogee-stone">
             Réserver
         </a>
+
+        <!-- Burger Menu Button (Mobile) -->
+        <button id="burgerBtn" onclick="toggleMobileMenu()" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5">
+            <span id="burgerLine1" class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+            <span id="burgerLine2" class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+            <span id="burgerLine3" class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 bg-apogee-black transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col items-center justify-center h-full gap-8 text-apogee-white">
+            <a href="#studio" onclick="closeMobileMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Le Studio</a>
+            <a href="#services" onclick="closeMobileMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Disciplines</a>
+            <a href="#" onclick="openPlanningModal(); closeMobileMenu(); return false;" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Planning</a>
+            <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Tarifs</a>
+            <a href="#equipe" onclick="closeMobileMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">L'Équipe</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-apogee-stone transition-colors">Contact</a>
+            <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="mt-8 bg-apogee-white text-apogee-black px-10 py-4 font-bold uppercase tracking-widest btn-premium">Réserver</a>
+        </div>
+    </div>
 
     <!-- HERO SECTION REVISITÉE -->
     <header class="relative min-h-[90svh] md:min-h-[85vh] flex flex-col justify-center items-center text-center px-5 py-16 md:p-6 overflow-hidden">
@@ -252,7 +273,7 @@
             </div>
         </div>
         <div class="order-1 lg:order-2">
-            <h2 class="text-4xl md:text-6xl font-black uppercase mb-8 leading-tight">Brut.<br>Haut de gamme.<br>Efficace.</h2>
+            <h2 class="text-4xl md:text-6xl font-black uppercase mb-8 leading-tight">Convivial.<br>Haut de gamme.<br>Efficace.</h2>
             <p class="text-xl text-gray-600 mb-10 leading-relaxed font-light">
                 Apogée Paris n'est pas qu'une salle de sport. C'est un studio de design dédié au mouvement. Nous avons supprimé tout le superflu pour ne garder que l'essentiel : le matériel le plus précis, les meilleurs experts et une ambiance qui favorise la concentration absolue.
             </p>
@@ -287,7 +308,7 @@
                 <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
                     <h3 class="text-2xl font-black uppercase mb-4">Récupération</h3>
                     <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-6 font-light">Massage sportif profond pour optimiser la régénération musculaire.</p>
-                    <a href="https://apog-e-paris.sportigo.fr/buy" target="_blank" class="border border-white/30 py-3 text-center uppercase text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition-all">Prendre RDV</a>
+                    <button onclick="openMassageModal()" class="border border-white/30 py-3 text-center uppercase text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition-all cursor-pointer">Prendre RDV</button>
                 </div>
             </div>
 
@@ -390,16 +411,16 @@
             <div class="w-full lg:w-1/2">
                 <h2 class="text-5xl md:text-7xl font-black uppercase mb-10 leading-none tracking-tighter">L'Élite du Studio.</h2>
                 <p class="text-xl font-light text-gray-400 mb-12 leading-relaxed">
-                    Notre équipe est composée d'experts certifiés travaillant en synergie pour votre santé physique. Ici, l'accompagnement est total.
+                    Notre équipe est composée d'experts certifiés travaillant en synergie pour votre santé physique et mentale. Ici, l'accompagnement est total.
                 </p>
                 <div class="space-y-6">
                     <div class="flex items-center gap-6 group cursor-default">
                         <span class="text-4xl font-marker text-apogee-stone transition-transform group-hover:scale-110 block">01</span>
-                        <span class="text-2xl font-bold uppercase tracking-widest">Coaching Scientifique</span>
+                        <span class="text-2xl font-bold uppercase tracking-widest">Coaching Spécifique</span>
                     </div>
                     <div class="flex items-center gap-6 group cursor-default">
                         <span class="text-4xl font-marker text-apogee-stone transition-transform group-hover:scale-110 block">02</span>
-                        <span class="text-2xl font-bold uppercase tracking-widest">Récupération Médicale</span>
+                        <span class="text-2xl font-bold uppercase tracking-widest">Récupération Optimale</span>
                     </div>
                     <div class="flex items-center gap-6 group cursor-default">
                         <span class="text-4xl font-marker text-apogee-stone transition-transform group-hover:scale-110 block">03</span>
@@ -408,6 +429,7 @@
                 </div>
             </div>
             <div class="w-full lg:w-1/2">
+                <p class="text-center text-apogee-stone font-marker text-2xl mb-6">Notre équipe</p>
                 <img src="images/team.webp" alt="Équipe de coachs et thérapeutes Apogée Paris" class="w-full grayscale border border-white/10 shadow-2xl" loading="lazy">
             </div>
         </div>
@@ -466,7 +488,7 @@
     <!-- FOOTER MINIMALISTE -->
     <footer class="bg-white border-t border-black/5 p-12 flex flex-col md:flex-row justify-between items-center gap-10">
         <div class="flex items-center gap-6">
-            <img src="images/logo.png" alt="Apogée" class="h-8 brightness-0 invert opacity-80">
+            <img src="images/logo.png" alt="Apogée" class="h-8 brightness-0 opacity-80">
             <div class="h-8 w-[1px] bg-black/10 hidden md:block"></div>
             <span class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">Performance Studio</span>
         </div>
@@ -484,6 +506,128 @@
             Réserver
         </a>
     </div>
+
+    <!-- MODAL PLANNING -->
+    <div id="planningModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/0 backdrop-blur-0 p-4 transition-all duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] scale-90 opacity-0 transition-all duration-300" id="planningModalContent">
+            <button onclick="closePlanningModal()" class="absolute -top-12 right-0 text-white text-3xl font-bold hover:opacity-50 transition-opacity">&times;</button>
+            <img src="images/planning-flyer.jpg" alt="Planning Apogée Paris" class="w-full h-auto max-h-[85vh] object-contain rounded shadow-2xl">
+        </div>
+    </div>
+
+    <!-- MODAL SELECTION MASSEUR -->
+    <div id="massageModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/0 backdrop-blur-0 transition-all duration-300">
+        <div id="massageModalContent" class="bg-apogee-white p-8 md:p-12 max-w-md w-[90%] mx-4 border-2 border-apogee-black relative scale-90 opacity-0 transition-all duration-300">
+            <button onclick="closeMassageModal()" class="absolute top-4 right-4 text-2xl font-bold hover:opacity-50 transition-opacity">&times;</button>
+            <h3 class="text-2xl font-black uppercase mb-2 tracking-tight">Choisir votre praticien</h3>
+            <p class="text-sm text-gray-500 mb-8">Sélectionnez un masseur pour prendre rendez-vous</p>
+            <div class="space-y-4">
+                <a href="https://calendly.com/canelle-ferrari" target="_blank" class="block w-full text-center bg-apogee-black text-white py-4 font-bold uppercase tracking-widest text-sm btn-premium hover:bg-gray-800">
+                    Canelle Ferrari
+                </a>
+                <a href="https://www.fresha.com/fr/a/apogee-le-studio-paris-24-rue-des-maronites-nvxow07f/booking" target="_blank" class="block w-full text-center bg-apogee-black text-white py-4 font-bold uppercase tracking-widest text-sm btn-premium hover:bg-gray-800">
+                    Jordan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu
+        let mobileMenuOpen = false;
+        function toggleMobileMenu() {
+            mobileMenuOpen = !mobileMenuOpen;
+            const menu = document.getElementById('mobileMenu');
+            const line1 = document.getElementById('burgerLine1');
+            const line2 = document.getElementById('burgerLine2');
+            const line3 = document.getElementById('burgerLine3');
+
+            if (mobileMenuOpen) {
+                menu.classList.remove('translate-x-full');
+                menu.classList.add('translate-x-0');
+                line1.classList.add('rotate-45', 'translate-y-2');
+                line2.classList.add('opacity-0');
+                line3.classList.add('-rotate-45', '-translate-y-2');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('translate-x-full');
+                menu.classList.remove('translate-x-0');
+                line1.classList.remove('rotate-45', 'translate-y-2');
+                line2.classList.remove('opacity-0');
+                line3.classList.remove('-rotate-45', '-translate-y-2');
+                document.body.style.overflow = '';
+            }
+        }
+        function closeMobileMenu() {
+            if (mobileMenuOpen) toggleMobileMenu();
+        }
+
+        // Modal Massage
+        function openMassageModal() {
+            const modal = document.getElementById('massageModal');
+            const content = document.getElementById('massageModalContent');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            // Animate in
+            setTimeout(() => {
+                modal.classList.remove('bg-black/0', 'backdrop-blur-0');
+                modal.classList.add('bg-black/70', 'backdrop-blur-sm');
+                content.classList.remove('scale-90', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+        function closeMassageModal() {
+            const modal = document.getElementById('massageModal');
+            const content = document.getElementById('massageModalContent');
+            // Animate out
+            modal.classList.add('bg-black/0', 'backdrop-blur-0');
+            modal.classList.remove('bg-black/70', 'backdrop-blur-sm');
+            content.classList.add('scale-90', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+        document.getElementById('massageModal').addEventListener('click', function(e) {
+            if (e.target === this) closeMassageModal();
+        });
+
+        // Modal Planning
+        function openPlanningModal() {
+            const modal = document.getElementById('planningModal');
+            const content = document.getElementById('planningModalContent');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            // Animate in
+            setTimeout(() => {
+                modal.classList.remove('bg-black/0', 'backdrop-blur-0');
+                modal.classList.add('bg-black/80', 'backdrop-blur-sm');
+                content.classList.remove('scale-90', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+        function closePlanningModal() {
+            const modal = document.getElementById('planningModal');
+            const content = document.getElementById('planningModalContent');
+            // Animate out
+            modal.classList.add('bg-black/0', 'backdrop-blur-0');
+            modal.classList.remove('bg-black/80', 'backdrop-blur-sm');
+            content.classList.add('scale-90', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+        document.getElementById('planningModal').addEventListener('click', function(e) {
+            if (e.target === this) closePlanningModal();
+        });
+    </script>
 
 </body>
 </html>
